@@ -1,3 +1,7 @@
+output "application_insights_analytics_items_id" {
+  description = "Map of id values across all application_insights_analytics_items, keyed the same as var.application_insights_analytics_items"
+  value       = { for k, v in azurerm_application_insights_analytics_item.application_insights_analytics_items : k => v.id }
+}
 output "application_insights_analytics_items_application_insights_id" {
   description = "Map of application_insights_id values across all application_insights_analytics_items, keyed the same as var.application_insights_analytics_items"
   value       = { for k, v in azurerm_application_insights_analytics_item.application_insights_analytics_items : k => v.application_insights_id }
